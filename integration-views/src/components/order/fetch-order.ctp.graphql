@@ -1,0 +1,26 @@
+query FetchOrder($id: String) {
+    order(id: $id) {
+        customerId
+        orderState
+        purchaseOrderNumber
+        shipmentState
+        shippingAddress {
+            streetName
+            streetNumber
+            postalCode
+            city
+        }
+        lineItems {
+            key
+            variant {
+                images {
+                    url
+                }
+            }
+            nameAllLocales {
+                locale
+                value
+            }
+        }
+    }
+}
